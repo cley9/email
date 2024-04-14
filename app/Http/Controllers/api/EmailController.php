@@ -18,7 +18,7 @@ class EmailController extends Controller
         $remitenteMail = $request->email;
         $remitenteAsunto = $request->asunto;
         $remitenteMensaje = $request->message;
-        Mail::to('cleyutp@gmail.com')->send(new ContactoMail($remitenteName, $remitenteMail, $remitenteAsunto, $remitenteMensaje));
+        Mail::to('cley@cley.dev')->send(new ContactoMail($remitenteName, $remitenteMail, $remitenteAsunto, $remitenteMensaje));
         return response()->json(["status"=>200, "message"=>"Correo enviado con éxito"],200);
     }
 }

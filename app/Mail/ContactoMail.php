@@ -25,8 +25,6 @@ class ContactoMail extends Mailable
 
     public function __construct($remitenteName,$remitenteMail,$remitenteAsunto,$remitenteMensaje)
     {
-        // $this->asunto=$asunto;
-        // $this->msg=$msg;
         $this->remitName = $remitenteName;
         $this->remitMail = $remitenteMail;
         $this->remitAsunto = $remitenteAsunto;
@@ -41,7 +39,7 @@ class ContactoMail extends Mailable
         return new Envelope(
             // subject: 'Contacto Mail',
             from: new Address($this->remitMail, $this->remitName),
-            subject: 'Contacto Email',
+            subject: ''.$this->remitAsunto,
 
         );
     }
